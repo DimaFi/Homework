@@ -3,7 +3,7 @@
 
 using namespace std;
 
-double f(int x) {
+double f(double x) {
 	if (x == 1 || x == 0.25) {
 		return -0.00001;
 	}
@@ -15,11 +15,11 @@ double f(int x) {
 
 int main()
 {
-	int a, b, i;
-	cin >> a >> b;
+	double a, b, i, h;
+	cin >> a >> b >> h;
 	cout << "y" << ' ' << "x" << endl;
 
-	for (i = a; i < b + 1; i++) {
+	for (i = a; i < b + 1; i+=h) {
 		if (f(i) == -0.00001) {
 			cout << "None" << ' ' << i << endl;
 		}
