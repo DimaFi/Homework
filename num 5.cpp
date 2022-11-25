@@ -25,6 +25,9 @@ int main()
 		cout << x / y;
 		break;
 
-	}
+	default :
+		cout << "бРЕД";
+		break;
+	} 
 	return 0;
 }
