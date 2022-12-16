@@ -19,5 +19,14 @@ int main() {
 			maxi = i;
 		}
 	}
-	cout << maxi;
+	int c;
+	c = 0;
+	for (i = 0; i < n; i++) {
+		if (a[i] == max) {
+			c++;
+		}
+	}
+
+
+	cout << c;
 }
