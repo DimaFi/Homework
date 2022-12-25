@@ -73,7 +73,7 @@ void f_4(int a, int b, int aa) {
 	}
 	int c1 = 0;
 
-	for (i = aa+1; i <= b; i++) {
+	for (i = aa + 1; i <= b; i++) {
 		for (j = 1; j <= i; j++) {
 			if (i % j == 0) {
 				c1++;
@@ -81,7 +81,9 @@ void f_4(int a, int b, int aa) {
 		}
 		if (c1 == c) {
 			cout << i << ' ' << c1 << " == " << c << " == count for A" << endl;
+			break;
 		}
+		c1 = 0;
 	}
 }
 
