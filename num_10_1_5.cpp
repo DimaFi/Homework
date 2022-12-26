@@ -29,11 +29,11 @@ int main() {
 		i++;
 	}
 
-	int n,j, z, k;
+	int n, j, z, k;
 	n = i;
 
 	double max;
-	max = dlin(t[0], t[1]);
+	max = -10000;
 
 	for (i = 0; i < n - 1; i++) {
 		for (j = 0; j < n; j++) {
@@ -46,9 +46,8 @@ int main() {
 	}
 
 	out << t[z].x << " " << t[z].y << " " << t[z].z << endl;
-	out	<< t[k].x << " " << t[k].y << " " << t[k].z << endl;
+	out << t[k].x << " " << t[k].y << " " << t[k].z << endl;
 
 	in.close();
 	out.close();
-
 }
