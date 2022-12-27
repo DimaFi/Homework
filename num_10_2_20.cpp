@@ -1,66 +1,47 @@
 #include <iostream>
 #include <iomanip>
-#include <cmath>
 #include <string>
+#include <Windows.h>
 #include <fstream>
 
 using namespace std;
 ifstream in("input.txt");
 ofstream out("output.txt");
-struct point {
-	int x, y;
+
+struct tab {
+	string f, i, o;
+	int course, group, res;
+
+
 };
-double dlin(point a, point b) {
-	return sqrt((a.x - b.x) * (a.x - b.x) + (a.y - b.y) * (a.y - b.y));
-}
 int main() {
+	SetConsoleCP(1251);
+	SetConsoleOutputCP(1251);
 
+	int n, h;
+	double x;
 
-	point t[100];
-
-	ifstream in("input.txt");
-	ofstream out("output.txt");
-
-
-	int i = 0;
-
-	while (!in.eof()) {
-		in >> t[i].x >> t[i].y;
-		i++;
+	in >> n;
+	in >> h;
+	tab* a = new tab[n];
+	for (int i = 0; i < n; i++) {
+		in >> a[i].f >> a[i].i >> a[i].o >> a[i].course >> a[i].group >> a[i].res;
 	}
-
-	int n, j, z = 0, k = 0, u = 0, p;
-	n = i;
-
-	double min, min1, min2;
-	min = 100000;
-	min1 = 100000;
-	min2 = 100000;
-
-	for (i = 0; i < n; i++) {
-		for (j = 0; j < n; j++) {
-			for (p = 0; p < n; p++){
-				if (min > dlin(t[j], t[p]) && i != j && j != p && i != p) {
-					min = dlin(t[j], t[p]);
-					if (min1 > dlin(t[j], t[i]) && i != j && j != p && i != p) {
-						min1 = dlin(t[j], t[i]);
-						if (min2 > dlin(t[p], t[i]) && i != j && j != p && i != p) {
-							min2 = dlin(t[p], t[i]);
-							z = i;
-							k = j;
-							u = p;
-						}
-					}
-				}
-			}
+	int c;
+	c = n;
+	for (int i = 0; i < n; i++) {
+		if (a[i].res >= h) {
+			out << a[i].f << ' ' << a[i].i << ' ' << a[i].o << ' ' << a[i].course << ' ' << a[i].group << ' ' << a[i].res << endl;
 		}
 	}
-
-	out << dlin(t[z],t[k]) + dlin(t[k],t[u]) + dlin(t[u],t[z]) << endl;
-	out << t[z].x << t[z].y << endl;
-	out << t[k].x << t[k].y << endl;
-	out << t[u].x << t[u].y << endl;
-
-	in.close();
-	out.close();
 }
+
+/* 
+5
+3
+S V A 1 141 3
+K D M 2 241 2
+L P V 1 141 5
+A P M 1 141 5
+S V P 1 141 4
+*/
