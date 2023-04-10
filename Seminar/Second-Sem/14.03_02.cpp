@@ -1,19 +1,10 @@
-#define _USE_MATH_DEFINES
+
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
-#include <cmath>
-#include <set>
-#include <map>
-#include <vector>
-#include <cctype>
 #include <string>
-#include <queue>
-#include <deque>
-#include <ctime>
 #include <Windows.h>
 #include <fstream>
-#include <array>
 
 using namespace std;
 int main() {
@@ -38,6 +29,4 @@ int main() {
     for (int i = 0; i < n; i++) {
         cout << b[i] << '\n';
     }
-
-    return 0;
 }
