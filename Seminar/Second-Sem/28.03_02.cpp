@@ -1,19 +1,7 @@
-#define _USE_MATH_DEFINES
+
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
-#include <cmath>
-#include <set>
-#include <map>
-#include <vector>
-#include <cctype>
-#include <string>
-#include <queue>
-#include <deque>
-#include <ctime>
-#include <Windows.h>
-#include <fstream>
-#include <array>
 
 using namespace std;
 
@@ -25,8 +13,6 @@ void ff(string* a, int n) {
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
 	int n; 
 	cin >> n;
 	string * a = new string[n];
@@ -35,5 +21,4 @@ int main() {
 	ff(a, n);
 	for (int i = 0; i < n; i++)
 		cout << a[i] << '\n';
-	return 0;
 }
