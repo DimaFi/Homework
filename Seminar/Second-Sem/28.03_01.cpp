@@ -1,19 +1,7 @@
-#define _USE_MATH_DEFINES
+
 #include <iostream>
 #include <iomanip>
 #include <algorithm>
-#include <cmath>
-#include <set>
-#include <map>
-#include <vector>
-#include <cctype>
-#include <string>
-#include <queue>
-#include <deque>
-#include <ctime>
-#include <Windows.h>
-#include <fstream>
-#include <array>
 
 using namespace std;
 
@@ -36,9 +24,6 @@ void trs(int n, int x, int p) {
 }
 
 int main() {
-	ios_base::sync_with_stdio(0);
-	cin.tie(0);
 	int n; cin >> n;
 	trs(n, 1, n);
-	return 0;
 }
