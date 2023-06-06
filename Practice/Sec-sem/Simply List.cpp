@@ -24,6 +24,58 @@ public:
         head = nullptr;
     }
 
+    void addWordPos(string word, int position) {
+        Node* newNode = new Node(word);
+
+        if (position == 0) {
+            newNode->next = head;
+            head = newNode;
+        }
+        else {
+            Node* current = head;
+            int currentPosition = 0;
+
+            while (current && currentPosition < position - 1) {
+                current = current->next;
+                currentPosition++;
+            }
+
+            if (current) {
+                newNode->next = current->next;
+                current->next = newNode;
+            }
+            else {
+                addWord(word);
+            }
+        }
+    }
+
+    bool removeWord(string word) {
+        if (head == nullptr) {
+            return false;
+        }
+
+        if (head->data == word) {
+            Node* temp = head;
+            head = head->next;
+            delete temp;
+            return true;
+        }
+
+        Node* current = head;
+        while (current->next) {
+            if (current->next->data == word) {
+                Node* temp = current->next;
+                current->next = current->next->next;
+                delete temp;
+                return true;
+            }
+            current = current->next;
+        }
+
+        return false;
+    }
+
     void addWord(string word) {
         Node* newNode = new Node(word);
 
@@ -102,6 +154,13 @@ int main() {
     simply_list.addWord("date");
     simply_list.addWord("date");
     simply_list.addWord("date");
+
+    cout << "simply_list_2: " << endl;
+    simply_list.printList();
+
+    simply_list.addWordPos("apple", 7);
+    simply_list.removeWord("date");
+
 
     cout << "simply_list_1: " << endl;
     simply_list.printList();
