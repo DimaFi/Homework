@@ -15,17 +15,7 @@ class Program
 
         double discriminant = b * b - 4 * a * c;
 
-        if (discriminant > 0)
-        {
-            Console.WriteLine("два корня");
-        }
-        else if (discriminant == 0)
-        {
-            Console.WriteLine("один корень");
-        }
-        else
-        {
-            Console.WriteLine("нет корней");
-        }
+        string result = (discriminant > 0) ? "два корня" : (discriminant == 0) ? "один корень" : "нет корней";
+        Console.WriteLine(result);
     }
 }
