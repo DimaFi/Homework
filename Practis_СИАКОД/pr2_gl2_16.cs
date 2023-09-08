@@ -13,9 +13,9 @@ class Program
         Console.Write("c= ");
         double c = Convert.ToDouble(Console.ReadLine());
 
-        double discriminant = b * b - 4 * a * c;
+        double discr = b * b - 4 * a * c;
 
-        string result = (discriminant > 0) ? "два корня" : (discriminant == 0) ? "один корень" : "нет корней";
+        string result = (discr > 0) ? "два корня" : (discr == 0) ? "один корень" : "нет корней";
         Console.WriteLine(result);
     }
 }
