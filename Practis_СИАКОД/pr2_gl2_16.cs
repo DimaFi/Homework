@@ -17,15 +17,15 @@ class Program
 
         if (discriminant > 0)
         {
-            Console.WriteLine("два корня.");
+            Console.WriteLine("два корня");
         }
         else if (discriminant == 0)
         {
-            Console.WriteLine("один корень.");
+            Console.WriteLine("один корень");
         }
         else
         {
-            Console.WriteLine("нет корней.");
+            Console.WriteLine("нет корней");
         }
     }
 }
