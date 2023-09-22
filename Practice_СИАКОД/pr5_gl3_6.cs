@@ -2,7 +2,7 @@ using System;
 
 class Program
 {
-    static int CalculateCombinations(int n, int m)
+    static int Combinat(int n, int m)
     {
         if (m == 0 || m == n)
             return 1;
@@ -10,7 +10,7 @@ class Program
         if (m == 1)
             return n;
 
-        return CalculateCombinations(n - 1, m) + CalculateCombinations(n - 1, m - 1);
+        return Combinat(n - 1, m) + Combinat(n - 1, m - 1);
     }
 
     static void Main()
@@ -18,7 +18,7 @@ class Program
         int n = 5;
         int m = 2;
 
-        int result = CalculateCombinations(n, m);
+        int result = Combinat(n, m);
         Console.WriteLine($"C({n}, {m}) = {result}");
     }
 }
