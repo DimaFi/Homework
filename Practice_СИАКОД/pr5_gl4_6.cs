@@ -19,7 +19,7 @@ class Program
 
         for (int i = A; i <= B; i++)
         {
-            Console.Write($"Цифры числа {i} в прямом порядке: ");
+            Console.Write($"Число {i}: ");
             PrintDigits(i);
             Console.WriteLine();
         }
