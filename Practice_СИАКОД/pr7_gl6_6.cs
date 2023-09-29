@@ -1,46 +1,17 @@
-using System;
-
-class Program
-{
-    static void Main()
+  static int[,] Remove(int[,] arr)
     {
-        int n = 3;
+        int i1 = arr.GetLength(0);
+        int j1 = arr.GetLength(1);
 
-        int[,] array = new int[n, n];
-
-        Random random = new Random();
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = 0; j < n; j++)
-            {
-                array[i, j] = random.Next(1, 10);
-            }
-        }
-
-        // Выводим исходный массив
-        Console.WriteLine("Исходный массив:");
-        PrintArray(array);
-
-        array = RemoveRowsWithoutEvenElements(array);
-
-        Console.WriteLine("\nМассив после удаления строк без четных элементов:");
-        PrintArray(array);
-    }
-
-    static int[,] RemoveRowsWithoutEvenElements(int[,] inputArray)
-    {
-        int rows = inputArray.GetLength(0);
-        int cols = inputArray.GetLength(1);
-
-        int[,] newArray = new int[rows, cols];
+        int[,] newArray = new int[i1, j1];
         int newRow = 0;
 
-        for (int i = 0; i < rows; i++)
+        for (int i = 0; i < i1; i++)
         {
             bool hasEven = false;
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < j1; j++)
             {
-                if (inputArray[i, j] % 2 == 0)
+                if (arr[i, j] % 2 == 0)
                 {
                     hasEven = true;
                     break;
@@ -49,18 +20,18 @@ class Program
 
             if (hasEven)
             {
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < j1; j++)
                 {
-                    newArray[newRow, j] = inputArray[i, j];
+                    newArray[newRow, j] = arr[i, j];
                 }
                 newRow++;
             }
         }
 
-        int[,] resultArray = new int[newRow, cols];
+        int[,] resultArray = new int[newRow, j1];
         for (int i = 0; i < newRow; i++)
         {
-            for (int j = 0; j < cols; j++)
+            for (int j = 0; j < j1; j++)
             {
                 resultArray[i, j] = newArray[i, j];
             }
@@ -68,19 +39,3 @@ class Program
 
         return resultArray;
     }
-
-    static void PrintArray(int[,] array)
-    {
-        int rows = array.GetLength(0);
-        int cols = array.GetLength(1);
-
-        for (int i = 0; i < rows; i++)
-        {
-            for (int j = 0; j < cols; j++)
-            {
-                Console.Write(array[i, j] + "\t");
-            }
-            Console.WriteLine();
-        }
-    }
-}
