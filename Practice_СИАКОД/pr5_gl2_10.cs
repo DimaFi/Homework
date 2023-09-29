@@ -1,4 +1,24 @@
+
+//██████╗         ███████╗
+//██╔══██╗        ██╔════╝
+//██║  ██║        █████╗  
+//██║  ██║        ██╔══╝  
+//██████╔╝███████╗██║     
+//╚═════╝ ╚══════╝╚═╝     
+//⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⣶⣄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+//⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣦⣄⣀⡀⣠⣾⡇⠀⠀⠀⠀
+//⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀⠀
+//⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⢿⣿⣿⡇⠀⠀⠀⠀
+//⠀⣶⣿⣦⣜⣿⣿⣿⡟⠻⣿⣿⣿⣿⣿⣿⣿⡿⢿⡏⣴⣺⣦⣙⣿⣷⣄⠀⠀⠀
+//⠀⣯⡇⣻⣿⣿⣿⣿⣷⣾⣿⣬⣥⣭⣽⣿⣿⣧⣼⡇⣯⣇⣹⣿⣿⣿⣿⣧⠀⠀
+//⠀⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠸⣿⣿⣿⣿⣿⣿⣿⣷
+
+
+
+
+
 using System;
+
 
 class Program
 {
@@ -28,8 +48,10 @@ class Program
         {
             int n = (x - a) / h;
             long result = FastPower(x, n);
-            Console.WriteLine($"{x} в степени {n} = {result}");
+            Console.WriteLine($"x = {x} в степени {n} = {result}");
         }
+
+        Console.WriteLine($"--------------------");
 
         // b) Найти сумму всех чисел x^n
 
@@ -41,6 +63,8 @@ class Program
             sum += result;
         }
         Console.WriteLine($"Сумма: {sum}");
+
+        Console.WriteLine($"--------------------");
 
         // c) Найти все тройки различных целых чисел x, y, z таких, что x^2 + y^2 = z^2
 
@@ -58,14 +82,18 @@ class Program
             }
         }
 
+        Console.WriteLine($"--------------------");
+
         // d) Найти такое число n, для которого выполняется неравенство 2^(n-1) ≤ a < 2^n
 
-        long aValue = 10;
-        int nValue = 0;
-        while (Math.Pow(2, nValue - 1) <= aValue && aValue < Math.Pow(2, nValue))
+        long a_d = 200;
+        int n_d = 1;
+        long a_d1 = a_d;
+        while (a_d1 / 2 != 0)
         {
-            nValue++;
+            a_d1 /= 2;
+            n_d++;
         }
-        Console.WriteLine($"Для a = {aValue}, n = {nValue}");
+        Console.WriteLine($"Для a = {a_d}, n = {n_d}");
     }
 }
