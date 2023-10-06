@@ -1,17 +1,28 @@
-  static int[,] Remove(int[,] arr)
+using System;
+
+class Program
+{
+    static void Main()
     {
-        int i1 = arr.GetLength(0);
-        int j1 = arr.GetLength(1);
+        int[][] Array = new int[][]
+        {
+            new int[] { 1, 3, 5, 7 },
+            new int[] { 2, 4, 6, 8 },
+            new int[] { 11, 13, 15, 17 },
+            new int[] { 10, 20, 30, 40 },
+        };
 
-        int[,] newArray = new int[i1, j1];
-        int newRow = 0;
 
-        for (int i = 0; i < i1; i++)
+        int[][] NewArray = new int[Array.Length][];
+        int RowCount = 0;
+
+        for (int i = 0; i < Array.Length; i++)
         {
             bool hasEven = false;
-            for (int j = 0; j < j1; j++)
+
+            foreach (int element in Array[i])
             {
-                if (arr[i, j] % 2 == 0)
+                if (element % 2 == 0)
                 {
                     hasEven = true;
                     break;
@@ -20,22 +31,15 @@
 
             if (hasEven)
             {
-                for (int j = 0; j < j1; j++)
-                {
-                    newArray[newRow, j] = arr[i, j];
-                }
-                newRow++;
+                NewArray[RowCount] = Array[i];
+                RowCount++;
             }
         }
 
-        int[,] resultArray = new int[newRow, j1];
-        for (int i = 0; i < newRow; i++)
+        Console.WriteLine("Result:");
+        for (int i = 0; i < RowCount;  i++)
         {
-            for (int j = 0; j < j1; j++)
-            {
-                resultArray[i, j] = newArray[i, j];
-            }
+            Console.WriteLine(string.Join(", ", NewArray[i]));
         }
-
-        return resultArray;
     }
+}
