@@ -5,25 +5,25 @@ class Program
 {
     static void Main()
     {
-        string inputFile = "input.txt";
-        string outputFile = "output.txt";
+        StreamReader inputFile = new StreamReader("input.txt");
 
-        string[] lines = File.ReadAllLines(inputFile);
+        string[] lines = inputFile.ReadLine().Split(new char[] { ' ', '\n', '\t' }, StringSplitOptions.RemoveEmptyEntries);
+
         double[] numbers = new double[lines.Length];
-
 
         for (int i = 0; i < lines.Length; i++)
         {
             numbers[i] = double.Parse(lines[i]);
         }
 
-        using (StreamWriter writer = new StreamWriter(outputFile))
+        inputFile.Close();
+
+        StreamWriter outputFile = new StreamWriter("output.txt");
+
+        for (int i = 0; i < numbers.Length - 1; i += 2)
         {
-            for (int i = 0; i < numbers.Length - 1; i += 2)
-            {
-                double average = (numbers[i] + numbers[i + 1]) / 2;
-                writer.WriteLine(average);
-            }
+            double average = (numbers[i] + numbers[i + 1]) / 2;
+            outputFile.WriteLine(average);
         }
     }
 }
