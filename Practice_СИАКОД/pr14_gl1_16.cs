@@ -32,17 +32,46 @@ namespace MyProgram
     {
         static void Main(string[] args)
         {
-            SPoint[] points = new SPoint[]
+            StreamReader inputFile = new StreamReader("input.txt");
+
+            SPoint[] points;
+
+            int numPoints = int.Parse(inputFile.ReadLine());
+            points = new SPoint[numPoints];
+
+            for (int i = 0; i < numPoints; i++)
             {
-                new SPoint(1, 2, 3),
-                new SPoint(4, 5, 6),
-                new SPoint(7, 8, 9),
-                new SPoint(10, 11, 12)
-            };
+                string[] coords = inputFile.ReadLine().Split(new char[] { ' ', '\n', '\t' });
+                int x = int.Parse(coords[0]);
+                int y = int.Parse(coords[1]);
+                int z = int.Parse(coords[2]);
+                points[i] = new SPoint(x, y, z);
+            }
+
+            inputFile.Close();
 
             SPoint minSumPoint = PointMinDistance(points);
-            Console.WriteLine("Point min distan: ");
-            minSumPoint.Show();
+
+            StreamWriter outputFile = new StreamWriter("output.txt");
+
+            for (int i = 0; i < points.Length; i++)
+            {
+                outputFile.WriteLine($"Distances from point {i}:");
+                for (int j = 0; j < points.Length; j++)
+                {
+                    if (i != j)
+                    {
+                        double distance = points[i].Distance(points[j]);
+                        outputFile.WriteLine($"To point {j}: {distance}");
+                    }
+                }
+                outputFile.WriteLine();
+            }
+
+            outputFile.WriteLine("Point min distance:");
+            outputFile.WriteLine(minSumPoint.x + " " + minSumPoint.y + " " + minSumPoint.z);
+
+            outputFile.Close();
         }
 
         static SPoint PointMinDistance(SPoint[] points)
