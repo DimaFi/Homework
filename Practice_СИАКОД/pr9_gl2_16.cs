@@ -31,7 +31,6 @@ class Program
             }
         }
 
-        // Создаем новый файл и вычисляем средние арифметические
         using (StreamWriter writer = new StreamWriter(outputFile))
         {
             for (int i = 0; i < numbers.Length - 1; i += 2)
@@ -40,7 +39,4 @@ class Program
                 writer.WriteLine(average);
             }
         }
-
-        Console.WriteLine("Средние арифметические записаны в файл: " + outputFile);
-    }
 }
