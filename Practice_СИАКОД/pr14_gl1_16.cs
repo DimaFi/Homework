@@ -1,5 +1,7 @@
 using System;
 using System.IO;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MyProgram
 {
@@ -50,34 +52,40 @@ namespace MyProgram
 
             inputFile.Close();
 
-            SPoint minSumPoint = PointMinDistance(points);
+            List<SPoint> minPoints = PointsMinDistance(points);
 
             StreamWriter outputFile = new StreamWriter("output.txt");
 
             for (int i = 0; i < points.Length; i++)
             {
+                double summary = 0;
                 outputFile.WriteLine($"Distances from point {i}:");
                 for (int j = 0; j < points.Length; j++)
                 {
                     if (i != j)
                     {
                         double distance = points[i].Distance(points[j]);
+                        summary += distance;
                         outputFile.WriteLine($"To point {j}: {distance}");
                     }
                 }
+                outputFile.WriteLine($"Summary: {summary}");
                 outputFile.WriteLine();
             }
 
-            outputFile.WriteLine("Point min distance:");
-            outputFile.WriteLine(minSumPoint.x + " " + minSumPoint.y + " " + minSumPoint.z);
+            outputFile.WriteLine("Points min sum:");
+            foreach (var point in minPoints)
+            {
+                outputFile.WriteLine($"{point.x} {point.y} {point.z}");
+            }
 
             outputFile.Close();
         }
 
-        static SPoint PointMinDistance(SPoint[] points)
+        static List<SPoint> PointsMinDistance(SPoint[] points)
         {
             double minSumDistance = double.MaxValue;
-            SPoint minSumPoint = new SPoint();
+            List<SPoint> minPoints = new List<SPoint>();
 
             for (int i = 0; i < points.Length; i++)
             {
@@ -91,14 +99,29 @@ namespace MyProgram
                     }
                 }
 
-                if (sumDistance < minSumDistance)
+                if (sumDistance == minSumDistance)
                 {
+                    minPoints.Add(points[i]);
+                }
+                else if (sumDistance < minSumDistance)
+                {
+                    minPoints.Clear();
+                    minPoints.Add(points[i]);
                     minSumDistance = sumDistance;
-                    minSumPoint = points[i];
                 }
             }
 
-            return minSumPoint;
+            return minPoints;
         }
     }
 }
+
+
+
+6
+1 1 1
+-1 -1 -1
+2 2 2
+-2 -2 -2
+3 3 3
+4 4 4
