@@ -15,10 +15,8 @@ class Program
 
             foreach (string numberStr in numberStrings)
             {
-                if (double.TryParse(numberStr, out double number))
-                {
-                    numbers.Add(number);
-                }
+                double number = double.Parse(numberStr);
+                numbers.Add(number);
             }
         }
 
