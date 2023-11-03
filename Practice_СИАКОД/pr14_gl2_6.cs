@@ -29,7 +29,7 @@ class Program
     {
         StreamReader inputFile = new StreamReader("input.txt");
         List<Product> inventory = new List<Product>();
-        int minQuantity = 10; // Замените эту величину на вашу заданную минимальную величину
+        int minQuantity = 10;
 
         while (!inputFile.EndOfStream)
         {
@@ -43,19 +43,21 @@ class Program
         }
         inputFile.Close();
 
-        List<Product> filteredInventory = new List<Product>();
+        List<Product> filter_Invent = new List<Product>();
+
         foreach (Product product in inventory)
         {
             if (product.quantity < minQuantity)
             {
-                filteredInventory.Add(product);
+                filter_Invent.Add(product);
             }
         }
 
-        filteredInventory.Sort();
+        filter_Invent.Sort();
 
         StreamWriter outputFile = new StreamWriter("output.txt");
-        foreach (Product product in filteredInventory)
+
+        foreach (Product product in filter_Invent)
         {
             outputFile.WriteLine($"{product.productType} {product.price} {product.variety} {product.quantity}");
         }
@@ -63,23 +65,23 @@ class Program
     }
 }
 
-Товар 1
-10.5
-Сорт А
+Prod 1
+10
+Sort А
 15
-
-Товар 2
-8.2
-Сорт B
-5
-
-Товар 3
-20.0
-Сорт C
+Prod 2
 8
-
-Товар 4
-12.3
-Сорт A
+Sort B
+5
+Prod 3
+20
+Sort C
+8
+Prod 4
+12
+Sort A
 2
-
+Prod 5
+12
+Sort A
+8
