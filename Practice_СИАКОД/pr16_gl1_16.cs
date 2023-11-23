@@ -25,7 +25,7 @@ class Program
         }
         input.Close();
 
-        var nums = num.Where(n => (Math.Abs(n) >= 100 && Math.Abs(n) <= 999)).Select(n => n-1);
+        var nums = num.Where(n => (Math.Abs(n) >= 100 && Math.Abs(n) <= 999)).OrderByDescending(n => n).Select(n => n - 1);
 
         StreamWriter output = new StreamWriter("output.txt");
 
@@ -36,3 +36,15 @@ class Program
         output.Close();
     }
 }
+
+/*
+934 245
+24
+-345
+234
+-234
+111
+1111
+999
+777
+*/
