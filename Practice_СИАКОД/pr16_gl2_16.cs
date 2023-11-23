@@ -76,3 +76,28 @@ class Program
         output.Close();
     }
 }
+
+
+/* 
+2024
+John Smith Johnson 12345 1000 2021
+Jane Doe Turner 23456 1500 2022
+Michael Johnson White 34567 2000 2021
+Alex Turner Turner 45678 1200 2020
+Emily White White 56789 1800 2022
+Andrew Anderson Anderson 67890 1600 2021
+Artem Sokolov Sokolov 78901 1300 2020
+Kirill Kozlov Kozlov 89012 2200 2022
+Dmitry Lebedev Lebedev 90123 1700 2021
+Egor Yegorov Yegorov 11223 1100 2020
+Timur Titov Titov 22334 1900 2021
+Boris Belyakov Belyakov 33445 1400 2022
+Gregory Grigoriev Grigoriev 44556 2000 2020
+Dmitriy Dmitriev Dmitriev 55667 1600 2021
+Constantin Komarov Komarov 66778 1200 2022
+Fedor Fedorov Fedorov 77889 1700 2020
+Alexey Zhukov Zhukov 88990 1500 2021
+Maxim Makarov Makarov 99001 1800 2022
+Roman Romanov Romanov 10012 1300 2020
+Semen Semenov Semenov 11123 1900 2021
+*/
