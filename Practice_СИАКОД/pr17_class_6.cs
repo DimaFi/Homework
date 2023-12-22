@@ -7,7 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Runtime.Intrinsics.X86;
-using System.Diagnostics.Metrics;
+//using System.Diagnostics.Metrics;
 using System.Reflection;
 using System.Net.Http.Headers;
 using System.ComponentModel.DataAnnotations;
@@ -27,8 +27,9 @@ class Matric
     }
     public Matric(int[,] inputArray)
     {
-        this.quantitiOfStrings = inputArray.Length;
+        this.quantitiOfStrings = inputArray.GetLength(0);
         this.quantitiOfZeroElements = 0;
+        this.quantitiOfColumns = inputArray.GetLength(1);
         int[,] temp = inputArray.Clone() as int[,];
         this.intArray = temp;
         for (int i = 0; i < this.quantitiOfStrings; i++)
@@ -45,11 +46,12 @@ class Matric
     }
     public Matric(Matric x)
     {
-        this.intArray = new int[x.quantitiOfStrings, ];
+        this.intArray = new int[x.quantitiOfStrings, x.quantitiOfColumns];
         int[,] temp = x.intArray.Clone() as int[,];
         this.intArray = temp;
         this.quantitiOfZeroElements = (int)x.quantitiOfZeroElements;
         this.quantitiOfStrings = (int)x.quantitiOfStrings;
+        this.quantitiOfColumns = (int)x.quantitiOfColumns;
         for (int i = 0; i < this.quantitiOfStrings; i++)
         {
             for (int j = 0; j < this.quantitiOfColumns; j++)
@@ -91,7 +93,7 @@ class Matric
         string outString = "";
         for (int i = 0; i < this.quantitiOfStrings; i++)
         {
-            for (int j = 0; j < this.intArray[i, j]; j++)
+            for (int j = 0; j < this.quantitiOfColumns; j++)
             {
                 outString += this.intArray[i, j].ToString() + " ";
             }
@@ -112,6 +114,17 @@ class Matric
             }
         }
         temp.intArray = tempArray;
+        temp.quantitiOfZeroElements = 0;
+        for (int i = 0; i < temp.quantitiOfStrings; i++)
+        {
+            for (int j = 0; j < temp.quantitiOfColumns; j++)
+            {
+                if (temp.intArray[i, j] > 0)
+                {
+                    temp.quantitiOfZeroElements++;
+                }
+            }
+        }
         return temp;
     }
 
@@ -127,8 +140,20 @@ class Matric
             }
         }
         temp.intArray = tempArray;
+        temp.quantitiOfZeroElements = 0;
+        for (int i = 0; i < temp.quantitiOfStrings; i++)
+        {
+            for (int j = 0; j < temp.quantitiOfColumns; j++)
+            {
+                if (temp.intArray[i, j] > 0)
+                {
+                    temp.quantitiOfZeroElements++;
+                }
+            }
+        }
         return temp;
     }
+
 
     public static bool operator true(Matric x)
     {
@@ -163,11 +188,18 @@ class Matric
     public int SumOfColumns(int m)
     {
         int sum = 0;
-        for (int i = 0; i < this.quantitiOfStrings; i++)
+        if (m < this.quantitiOfColumns)
         {
-            sum += this.intArray[i, m];
+            for (int i = 0; i < this.quantitiOfStrings; i++)
+            {
+                sum += this.intArray[i, m];
+            }
+            return sum;
         }
-        return sum;
+        else
+        {
+            return 0;
+        }
     }
 
     public int QuantitiOfZeroElements
@@ -245,6 +277,16 @@ class Matric
 
                     }
                     this.intArray[i, j] = value;
+                    int temp = this.intArray[i, j];
+                    this.intArray[i, j] = value;
+                    if (temp > 0 && value <= 0)
+                    {
+                        this.quantitiOfZeroElements--;
+                    }
+                    if (temp <= 0 && value > 0)
+                    {
+                        this.quantitiOfZeroElements++;
+                    }
                 }
             }
         }
