@@ -1,0 +1,32 @@
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.exe
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.deps.json
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.runtimeconfig.json
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.runtimeconfig.dev.json
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.dll
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\ref\Pr18_gl1_6.dll
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.pdb
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.csproj.AssemblyReference.cache
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.AssemblyInfoInputs.cache
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.AssemblyInfo.cs
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.csproj.CoreCompileInputs.cache
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.dll
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\ref\Pr18_gl1_6.dll
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.pdb
+C:\Users\filippenkoda\source\repos\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.genruntimeconfig.cache
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.exe
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.deps.json
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.runtimeconfig.json
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.runtimeconfig.dev.json
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.dll
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\bin\Debug\net5.0\Pr18_gl1_6.pdb
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.csproj.AssemblyReference.cache
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.GeneratedMSBuildEditorConfig.editorconfig
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.AssemblyInfoInputs.cache
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.AssemblyInfo.cs
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.csproj.CoreCompileInputs.cache
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.dll
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\refint\Pr18_gl1_6.dll
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.pdb
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\Pr18_gl1_6.genruntimeconfig.cache
+D:\Универ\2 курс\4 семестр\СИАКОД\Pr18_gl1_6\Pr18_gl1_6\obj\Debug\net5.0\ref\Pr18_gl1_6.dll
